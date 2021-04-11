@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import api from "../utils/api";
+// import api from "../utils/api";
 
-
-const Account = (props) => {
+const Account = () => {
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -12,13 +12,13 @@ const Account = (props) => {
     api()
       .get("/me")
       .then((res) => {
+        console.log(res);
         setUser({
           name: res.data.name,
           email: res.data.email,
         });
       });
   }, []);
-
   return (
     <div>
       <div className="account-row">Name:{user.name}</div>
@@ -28,3 +28,4 @@ const Account = (props) => {
 };
 
 export default Account;
+

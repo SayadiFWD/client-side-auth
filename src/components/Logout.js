@@ -1,9 +1,17 @@
 import React from "react";
 import { Redirect } from "react-router-dom"
 
-function Logout(){
+// function Logout(){
+//     localStorage.removeItem("token")
+//     return <Redirect to="/signin"/>
+// }
+
+// export default Logout;
+
+
+const Logout =()=>{
     localStorage.removeItem("token")
     return <Redirect to="/signin"/>
 }
 
-export default Logout;
+export default Logout
